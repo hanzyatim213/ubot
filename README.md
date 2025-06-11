@@ -1,12 +1,12 @@
 ## ubotlite Lite
 ```
-apt update && apt upgrade -y && add-apt-repository 'ppa:deadsnakes/ppa'
+apt update && apt upgrade -y && add-apt-repository 'ppa:deadsnakes/ppa' && rm -rf ubot*
 ```
 ```
-git clone https://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@github.com/NATZTTT/ubotlite
+git clone https://github.com/hanzyatim213/ubot.git
 ```
 ```
-cd ubotlite && screen -S ubotlite
+cd ubot && screen -S ubot
 ```
 ```
 cp sample.env .env && apt install ffmpeg -y && bash installnode.sh
