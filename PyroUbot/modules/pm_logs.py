@@ -13,30 +13,41 @@ from PyroUbot import *
 
 FLOOD = {}
 MSG_ID = {}
-PM_TEXT = """🙋🏻‍♂halo {mention} ᴀᴅᴀ ʏᴀɴɢ ʙɪsᴀ sᴀʏᴀ ʙᴀɴᴛᴜ?
-**ᴘᴇʀᴋᴇɴᴀʟᴋᴀɴ sᴀʏᴀ ᴀᴅᴀʟᴀʜ ᴘᴍ-sᴇᴄᴜʀɪᴛʏ ᴅɪsɪɴɪ, sɪʟᴀʜᴋᴀɴ ᴛᴜɴɢɢᴜ ᴀᴋᴜɴ sᴀʏᴀ ᴍᴇᴍʙᴀʟᴀs ᴘᴇsᴀɴ ᴍᴜ ɪɴɪ ʏᴀ, ᴊᴀɴɢᴀɴ sᴘᴀᴍ ʏᴀ ᴀᴛᴀᴜ ᴀɴᴅᴀ ᴀᴋᴀɴ ᴅɪ ʙʟᴏᴋɪʀ sᴇᴄᴀʀᴀ ᴏᴛᴏᴍᴀᴛɪs**
-ᴘᴇʀɪɴɢᴀᴛᴀɴ: {ᴡᴀʀɴ} ʜᴀᴛɪ-ʜᴀᴛɪ"""
+PM_TEXT = """
+<blockquote>🙋🏻‍♂halo {mention} ada yang bisa saya bantu?
+
+perkenalkan saya adalah pm-security disini
+silahkan tunggu majikan saya membalas pesan mu ini ya
+jangan spam ya atau anda akan di blokir secara otomatis
+
+⚠peringatan: {warn} hati-hati</blockquote>
+"""
 
 
 __MODULE__ = "ᴘᴍᴘᴇʀᴍɪᴛ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE PMPERMIT 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Pmpermit
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .pmpermit (ᴏɴ ᴏʀ ᴏғғ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢᴀᴋᴛɪғᴋᴀɴ ᴀᴛᴀᴜ ᴍᴇɴᴏɴᴀᴋᴛɪғᴋᴀɴ ᴘᴍ ᴘᴇʀᴍɪᴛ**
+perintah : <code>{0}pmpermit</code> query > on or off
+    mengaktifkan atau menonaktifkan pm permit
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .ᴏᴋ ᴏʀ terima**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢɪᴢɪɴᴋᴀɴ sᴇsᴇᴏʀᴀɴʜ ᴜɴᴛᴜᴋ ᴘᴍ ᴀɴᴅᴀ**
+perintah : <code>{0}ok</code>
+    mengizinkan seseoranh untuk pm anda
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .no ᴏʀ tolak**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴᴏʟᴀᴋ sᴇsᴇᴏʀᴀɴɢ ᴜɴᴛᴜᴋ ᴘᴍ ᴀɴᴅᴀ**
+perintah : <code>{0}no</code>
+    menolak seseorang untuk pm anda
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .setpm (ǫᴜᴇʀʏ)**
-〄➠ **ǫᴜᴇʀʏ: |pic |text |limit**
-〄➠ **ᴇxᴀᴍᴘʟᴇ: .setpm limit 5 **
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢᴀᴛᴜʀ ᴄᴏɴғɪɢᴜʀᴀᴛɪᴏɴ ᴘᴀᴅᴀ ᴘᴍᴘᴇʀᴍɪᴛ**
+perintah : <code>{0}setpm</code>
+query: |pic |text |limit
+    mengatur configuration pada pm_permit
 
- **⋄ ᴛᴜᴛᴏʀɪᴀʟ ᴍᴇɴᴜɴɢɢᴜɴᴀᴋᴀɴ ʙᴜᴛᴛᴏɴ:** <a href='https://t.me/halopyrogram/172'>ᴘᴇɴᴄᴇᴛ ᴅɪ sɪɴɪ</a>
- **⋄ ᴛᴜᴛᴏʀɪᴀʟ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘɪᴄ/ɢᴀᴍʙᴀʀ:** <a href='https://t.me/halopyrogram/192'>ᴘᴇɴᴄᴇᴛ ᴅɪ sɪɴɪ</a>"""
+contoh menggunakan button  : <a href='https://t.me/halopyrogram/172'>tutorial</a>
+
+contoh menggunakan gambar yang benar  : <a href='https://t.me/halopyrogram/192'>tutorial</a>
+
+contoh menggunakan warning 
+    command : setpm limit 5</blockquote>
+"""
 
 
 @PY.NO_CMD_UBOT("PMPERMIT", ubot)
@@ -60,7 +71,7 @@ async def _(client, message):
                 if FLOOD[user.id] > int(pm_limit):
                     del FLOOD[user.id]
                     await message.reply(
-                        "𖠇➛{ sᴜᴅᴀʜ ᴅɪɪɴɢᴀᴛᴋᴀɴ ᴊᴀɴɢᴀɴ sᴘᴀᴍ, sᴇᴋᴀʀᴀɴɢ ᴀɴᴅᴀ ᴅɪʙʟᴏᴋɪʀ."
+                        "sudah diingatkan jangan spam, sekarang Anda diblokir."
                     )
                     return await client.block_user(user.id)
             except ValueError:
@@ -105,7 +116,7 @@ async def _(client, message):
     ggl = await EMO.GAGAL(client)
     if len(message.command) < 3:
         return await message.reply(
-            f"{ggl}{message.text.split()[0]} (ǫᴜᴇʀʏ)(ᴠᴀʟᴜᴇ)"
+            f"{ggl}{message.text.split()[0]} [query] [value]"
         )
     query = {"limit": "PM_LIMIT", "text": "PM_TEXT", "pic": "PM_PIC"}
     if message.command[1].lower() not in query:
@@ -195,9 +206,9 @@ async def _(client, message):
     vars = await get_pm_id(client.me.id)
     if user.id not in vars:
         await add_pm_id(client.me.id, user.id)
-        return await message.reply(f"{brhsl}ʙᴀɪᴋʟᴀʜ, {rpk} ᴛᴇʟᴀʜ ᴅɪᴛᴇʀɪᴍᴀ")
+        return await message.reply(f"{brhsl}baiklah, {rpk} telah diterima")
     else:
-        return await message.reply(f"{brhsl}{rpk} sᴜᴅᴀʜ ᴅɪᴛᴇʀɪᴍᴀ")
+        return await message.reply(f"{brhsl}{rpk} sudah diterima")
 
 
 @PY.UBOT("no|tolak")
@@ -209,12 +220,12 @@ async def _(client, message):
     rpk = f"[{user.first_name} {user.last_name or ''}](tg://user?id={user.id})"
     vars = await get_pm_id(client.me.id)
     if user.id not in vars:
-        await message.reply(f"<b>{ggl}🙏🏻 ᴍᴀᴀғ ⁣{rpk} ᴀɴᴅᴀ ᴛᴇʟᴀʜ ᴅɪʙʟᴏᴋɪʀ**</b>\n||mampus kontol gw blok||")
+        await message.reply(f"{ggl}🙏🏻 maaf ⁣{rpk} anda telah diblokir")
         return await client.block_user(user.id)
     else:
         await remove_pm_id(client.me.id, user.id)
         return await message.reply(
-            f"<b>{ggl}🙏🏻 ᴍᴀᴀғ {rpk} ᴀɴᴅᴀ ᴛᴇʟᴀʜ ᴅɪᴛᴏʟᴀᴋ ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴜʙᴜɴɢɪ ᴀᴋᴜɴ ɪɴɪ ʟᴀɢɪ**</b>"
+            f"{ggl}🙏🏻 maaf {rpk} anda telah ditolak untuk menghubungi akun ini lagi"
         )
 
 async def pmpermit_button(m):

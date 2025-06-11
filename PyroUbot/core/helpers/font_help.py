@@ -2598,7 +2598,7 @@ def paginate_modules(page_n, module_dict, prefix, chat=None):
             )
             for x in module_dict.values()
         ]
-    line = 4
+    line = 3
     pairs = list(zip(modules[::2], modules[1::2]))
     i = 0
     for m in pairs:
@@ -2621,15 +2621,11 @@ def paginate_modules(page_n, module_dict, prefix, chat=None):
         pairs = pairs[modulo_page * line : line * (modulo_page + 1)] + [
             (
                 EqInlineKeyboardButton(
-                    "❮❮❮",
+                    "❮❮",
                     callback_data="{}_prev({})".format(prefix, modulo_page),
                 ),
                 EqInlineKeyboardButton(
-                    " 𖤐 ",
-                    callback_data="close_user".format(prefix, modulo_page),
-                ),
-                EqInlineKeyboardButton(
-                    "❯❯❯",
+                    "❯❯",
                     callback_data="{}_next({})".format(prefix, modulo_page),
                 ),
             )

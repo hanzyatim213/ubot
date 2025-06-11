@@ -13,29 +13,28 @@ from pyrogram.enums import ChatType
 from PyroUbot import *
 
 
-__MODULE__ = "ᴘʀᴏꜰɪʟᴇ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE PROFILES 」**
+__MODULE__ = "ᴘʀᴏꜰɪʟᴇꜱ"
+__HELP__ = """
+<blockquote>Bantuan Untuk Profiles
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .setbio**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢᴜʙᴀʜ ʙɪᴏ ᴘᴀᴅᴀ ᴀᴋᴜɴ ᴀɴᴅᴀ**
+perintah : <code>{0}setbio</code>
+    mengubah bio pada akun anda
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .setname**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢᴜʙᴀʜ ɴᴀᴍᴀ ᴘᴀᴅᴀ ᴀᴋᴜɴ ᴀɴᴅᴀ**
+perintah : <code>{0}setname</code>
+    mengubah nama pada akun anda:
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .block**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇᴍʙʟᴏᴋɪʀ ᴘᴇɴɢɢᴜɴᴀ**
+perintah : <code>{0}block</code>
+    memblokir pengguna
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .unblock**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇᴍʙᴜᴋᴀ ᴘᴇᴍʙʟᴏᴋɪʀᴀɴ ᴘᴀᴅᴀ ᴘᴇɴɢɢᴜɴᴀ**
+perintah : <code>{0}unblock</code>
+    membuka pemblokiran pada pengguna
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .sg**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇᴍᴇʀɪᴋsᴀ ʜɪsᴛᴏʀɪ ɴᴀᴍᴇ ᴘᴇɴɢɢᴜɴᴀ ᴛᴇʟᴇɢʀᴀᴍ**
+perintah : <code>{0}info</code>
+    melihat informasi data akun telegram
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .info**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇʟɪʜᴀᴛ ɪɴғᴏʀᴍᴀsɪ ᴅᴀᴛᴀ ᴀᴋᴜɴ ᴛᴇʟᴇɢʀᴀᴍ**
-
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .cinfo**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇʟɪʜᴀᴛ ɪɴғᴏʀᴍᴀsɪ ᴅᴀᴛᴀ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ᴛᴇʟᴇɢʀᴀᴍ**"""
+perintah : <code>{0}cinfo</code>
+    melihat informasi data group/channel telegram</blockquote>
+"""
 
 
 @PY.UBOT("sg")
@@ -155,7 +154,8 @@ async def _(client, message):
         username = f"@{chat.username}" if chat.username else "-"
         description = f"{chat.description}" if chat.description else "-"
         dc_id = f"{chat.dc_id}" if chat.dc_id else "-"
-        out_str = f"""<blockquote>{brhsl}chat information:
+        out_str = f"""
+{brhsl}chat information:
 
 🆔 chat id: {chat.id}
 👥 title: {chat.title}
@@ -169,7 +169,8 @@ async def _(client, message):
 🔰 protected: {chat.has_protected_content}
 
 🚻 total members: {chat.members_count}
-📝 description: {description}</blockquote>"""
+📝 description: {description}
+"""
         
         await Tm.edit(out_str, disable_web_page_preview=True)
     except Exception as e:

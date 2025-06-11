@@ -3,16 +3,18 @@ import asyncio
 from PyroUbot import *
 
 __MODULE__ = "ᴘᴜʀɢᴇ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE PURGE 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Purge
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .purge**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ʙᴇʀsɪʜᴋᴀɴ (ʜᴀᴘᴜs sᴇᴍᴜᴀ ᴘᴇsᴀɴ) ᴅᴀʀɪ ᴘᴇsᴀɴ ʏᴀɴɢ ᴅɪ ʙᴀʟᴇs**
+perintah : <code>{0}purge</code>
+    bersihkan (hapus semua pesan) dari pesan yang di bales
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .del**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢʜᴀᴘᴜs ᴘᴇsᴀɴ ʏᴀɴɢ ᴅɪ ʙᴀʟᴀs**
+perintah : <code>{0}del</code>
+    menghapus pesan yang di balas
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .purgeme**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢʜᴀᴘᴜs ᴘᴇsᴀɴ ᴀɴᴅᴀ sᴇᴅɪʀɪ**"""
+perintah : <code>{0}purgeme</code>
+    menghapus pesan anda sediri</blockquote>
+"""
 
 
 @PY.UBOT("del")

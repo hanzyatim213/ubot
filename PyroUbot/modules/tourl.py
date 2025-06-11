@@ -4,15 +4,17 @@ from io import BytesIO
 from PyroUbot import *
 
 __MODULE__ = "ᴛᴏᴜʀʟ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE TOURL 」**
+__HELP__ = """
+<blockquote><b>Bantuan untuk tourl
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .tourl (ʙᴀʟᴀs ᴋᴇ ᴍᴇᴅɪᴀ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢᴜᴘʟᴏᴀᴅ ᴍᴇᴅɪᴀ ᴋᴇ ʟɪɴᴋ**"""
+perintah : <code>{0}tourl</code> [reply media/text]
+    mengapload media/text ke catbox.moe</b></blockquote>
+"""
 
 async def upload_file(buffer: BytesIO) -> str:
     kind = filetype.guess(buffer)
     if kind is None:
-        raise ValueError("cannot determine file type")
+        raise ValueError("Cannot determine file type")
     ext = kind.extension
 
     buffer.seek(0)
@@ -28,7 +30,7 @@ async def upload_file(buffer: BytesIO) -> str:
     async with aiohttp.ClientSession() as session:
         async with session.post('https://catbox.moe/user/api.php', data=form) as response:
             if response.status != 200:
-                raise Exception(f"🤓 ᴇʀᴏʀ ʙᴀɴɢ ᴍᴀᴜ ɴɢᴀᴘᴀɪɴ ᴀɴᴊ : {response.status}")
+                raise Exception(f"Failed to upload file: {response.status}")
             return await response.text()
 
 @PY.UBOT("tourl|tg")
@@ -41,10 +43,8 @@ async def _(client, message):
             buffer = BytesIO(f.read())
             try:
                 media_url = await upload_file(buffer)
-                await message.reply(f"""᪤➟• ᴍᴇᴅɪᴀ ʙᴇʀʜᴀsɪʟ ᴍᴇɴᴊᴀᴅɪ ʟɪɴᴋ
-᪤➟• ʟɪɴᴋ ᴍᴇᴅɪᴀ <a href='{media_url}'>ᴋʟɪᴄᴋ ʜᴇʀᴇ</a>
-᪤➟• ᴅᴏɴᴇ ʙᴀʏ ɢᴜᴡᴀʜ """)
+                await message.reply(f"<b>berhasil diupload ke : <a href='{media_url}'>catbox.moe</a></b>")
             except Exception as e:
                 await message.reply(f"Error: {e}")
     else:
-        await message.reply("ʙᴀʟᴇs ᴍᴇᴅɪᴀɴʏᴀ ᴋᴏɴᴛᴏʟʟ 🤓")
+        await message.reply("Please reply to a media message to upload.")

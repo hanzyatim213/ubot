@@ -29,7 +29,7 @@ async def YoutubeDownload(url, as_video=False):
             "geo_bypass": True,
             "cookiefile": "cookies.txt",
         }
-    data_ytp = "<blockquote><b><emoji id=6005994005148471369>💡</emoji> informasi {}</blockquote></b>\n\n<blockquote><b><emoji id=5904544038643569182>🏷</emoji> nama: {}</blockquote></b>\n<blockquote><b><emoji id=6030547358222127917>🧭</emoji> durasi: {}</blockquote></b>\n<blockquote><b><emoji id=5233246225146332642>👀</emoji> dilihat: {}</blockquote></b>\n<blockquote><b><emoji id=6005896024059547548>📢</emoji> channel: {}</blockquote></b>\n<blockquote><b><emoji id=6005993794695076239>🔗</emoji> tautan: <a href={}>youtube</a></blockquote></b>\n\n<blockquote><b><emoji id=5801170880272797821>⚡</emoji> powered by: <a href='https://t.me/akbarbotz1'>akbar gantenk</a></blockquote></b>"
+    data_ytp = "<emoji id=6005994005148471369>💡</emoji> informasi {}\n\n<emoji id=5904544038643569182>🏷</emoji> nama: {}\n<emoji id=6030547358222127917>🧭</emoji> durasi: {}\n<emoji id=5233246225146332642>👀</emoji> dlihat: {}\n<emoji id=6005896024059547548>📢</emoji> channel: {}\n<emoji id=6005993794695076239>🔗</emoji> tautan: <a href={}>youtube</a>"
     ydl = YoutubeDL(ydl_opts)
     ytdl_data = await run_sync(ydl.extract_info, url, download=True)
     file_name = ydl.prepare_filename(ytdl_data)

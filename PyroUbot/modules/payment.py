@@ -21,11 +21,12 @@ async def _(client, callback_query):
         pesan = await bot.ask(
             user_id,
             f"""
-<blockquote><b>ꜱɪʟᴀʜᴋᴀɴ ᴍᴇʟᴀᴋᴜᴋᴀɴ ᴘᴇᴍʙᴀʏᴀʀᴀɴ ᴛᴇʀʟᴇʙɪʜ ᴛᴀʜᴜʟᴜ ᴋᴇ Qʀɪꜱ ᴅɪ ʙᴀᴡᴀʜ ɪɴɪ</b>           
+<blockquote><b>💬 sɪʟᴀʜᴋᴀɴ ᴍᴇʟᴀᴋᴜᴋᴀɴ ᴘᴇᴍʙᴀʏᴀʀᴀɴ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ</b> 
 
-qʀɪꜱ : ||https://ibb.co.com/P62K3xf||
+silahkan chat owner saya
+OWNER BOT : <a href=tg://openmessage?user_id={OWNER_ID}>@Notfaund_new</a> 
 
-<b>💬 sɪʟᴀʜᴋᴀɴ ᴋɪʀɪᴍᴋᴀɴ ʙᴜᴋᴛɪ sᴄʀᴇᴇɴsʜᴏᴛ ᴘᴇᴍʙᴀʏᴀʀᴀɴ ᴀɴᴅᴀ: {full_name}</b></blockquote>
+<b>🛍 ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴋᴏɴꜰɪʀᴍᴀsɪ ᴜɴᴛᴜᴋ ᴋɪʀɪᴍ ʙᴜᴋᴛɪ ᴘᴇᴍʙᴀʏᴀʀᴀɴ ᴀɴᴅᴀ</b></blockquote>
 """,
             timeout=300,
         )
@@ -54,7 +55,7 @@ qʀɪꜱ : ||https://ibb.co.com/P62K3xf||
             )
             CONFIRM_PAYMENT.remove(get.id)
             buttons = [
-                [InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/HELLOSALVADORESS")]
+                [InlineKeyboardButton("📞 ᴏᴡɴᴇʀ", url="https://t.me/Notfaund_new")]
             ]
             return await bot.send_message(
                 user_id,

@@ -39,8 +39,8 @@ aiosession = ClientSession()
 
 class Bot(Client):
     def __init__(self, **kwargs):
-        super().__init__(**kwargs, device_model="ᴠᴇɴᴏᴢ-sɪᴍᴘʟᴇʙᴏᴛ")
-        
+        super().__init__(**kwargs)
+
     def on_message(self, filters=None, group=-1):
         def decorator(func):
             self.add_handler(MessageHandler(func, filters), group)
@@ -67,7 +67,7 @@ class Ubot(Client):
     _get_my_peer = {}
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs, device_model="ᴠᴇɴᴏᴢ-sɪᴍᴘʟᴇʙᴏᴛ")
+        super().__init__(**kwargs)
         self.call_py = PyTgCalls(self)
 
     def on_message(self, filters=None, group=-1):
@@ -143,14 +143,14 @@ class Ubot(Client):
 
 
 bot = Bot(
-    name="bot",
+    name="ubotjefrii",
     bot_token=BOT_TOKEN,
     api_id=API_ID,
     api_hash=API_HASH,
     in_memory=True,
 )
 
-ubot = Ubot(name="ubot")
+ubot = Ubot(name="ubotjefrii")
 
 from PyroUbot.core.database import *
 from PyroUbot.core.function import *

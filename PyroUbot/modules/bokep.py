@@ -2,110 +2,34 @@ import random
 from pyrogram.enums import MessagesFilter
 from PyroUbot import *
 
-__MODULE__ = "ʙᴏᴋᴇᴘ"
+
+__MODULE__ = "ʙᴏᴋᴇx"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk bokep
+<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙᴏᴋᴇx ⦫</b>
 
-perintah : <code>{0}bokep1</code>
-    lagi nyari bokepnya bntr....
-
-perintah : <code>{0}bokep2</code>
-    lagi nyari bokepnya bntr....
-
-perintah : <code>{0}bokep3</code>
-    lagi nyari bokepnya bntr....
-    
-perintah : <code>{0}bokep4</code>
-    lagi nyari bokepnya bntr....
-    
-perintah : <code>{0}bokep5</code>
-    lagi nyari bokepnya bntr....</b></blockquote>
-    
+<blockquote><b>⎆ perintah :
+ᚗ <code>{0}bokep</code>
+⊷ fitur bokep ya</b></blockquote>
 """
 
-
-@PY.UBOT("bokep1")
-@PY.TOP_CMD
-async def video_asupan(client, message):
-    prs = await EMO.PROSES(client)
-    y = await message.reply_text(f"{prs}jangan ngocok mulu dek....")
+@PY.UBOT("bokep")
+async def _(client, message):
+    y = await message.reply_text(f"**mencari video bokep**...", quote=True)
     try:
-        asupannya = []
-        async for asupan in client.search_messages(
-            "@vvideo_viral", filter=MessagesFilter.VIDEO
+        await client.join_chat("https://t.me/+kJJqN5kUQbs1NTVl")
+    except:
+        pass
+    try:
+        bokepnya = []
+        async for bokep in client.search_messages(
+            -1001867672427, filter=MessagesFilter.VIDEO
         ):
-            asupannya.append(asupan)
-        video = random.choice(asupannya)
+            bokepnya.append(bokep)
+        video = random.choice(bokepnya)
         await video.copy(message.chat.id, reply_to_message_id=message.id)
         await y.delete()
     except Exception as error:
         await y.edit(error)
-
-
-@PY.UBOT("bokep2")
-@PY.TOP_CMD
-async def video_asupan(client, message):
-    prs = await EMO.PROSES(client)
-    y = await message.reply_text(f"{prs}jangan ngocok mulu dek....")
-    try:
-        asupannya = []
-        async for asupan in client.search_messages(
-            "@asupan18tocrot", filter=MessagesFilter.VIDEO
-        ):
-            asupannya.append(asupan)
-        video = random.choice(asupannya)
-        await video.copy(message.chat.id, reply_to_message_id=message.id)
-        await y.delete()
-    except Exception as error:
-        await y.edit(error)
-        
-@PY.UBOT("bokep3")
-@PY.TOP_CMD
-async def video_asupan(client, message):
-    prs = await EMO.PROSES(client)
-    y = await message.reply_text(f"{prs}jangan ngocok mulu dek....")
-    try:
-        asupannya = []
-        async for asupan in client.search_messages(
-            "@asupan18tocrot", filter=MessagesFilter.VIDEO
-        ):
-            asupannya.append(asupan)
-        video = random.choice(asupannya)
-        await video.copy(message.chat.id, reply_to_message_id=message.id)
-        await y.delete()
-    except Exception as error:
-        await y.edit(error)
-      
-@PY.UBOT("bokep4")
-@PY.TOP_CMD
-async def video_asupan(client, message):
-    prs = await EMO.PROSES(client)
-    y = await message.reply_text(f"{prs}jangan ngocok mulu dek....")
-    try:
-        asupannya = []
-        async for asupan in client.search_messages(
-            "@asupan18tocrot", filter=MessagesFilter.VIDEO
-        ):
-            asupannya.append(asupan)
-        video = random.choice(asupannya)
-        await video.copy(message.chat.id, reply_to_message_id=message.id)
-        await y.delete()
-    except Exception as error:
-        await y.edit(error)
-        
-@PY.UBOT("bokep5")
-@PY.TOP_CMD
-async def video_asupan(client, message):
-    prs = await EMO.PROSES(client)
-    y = await message.reply_text(f"{prs}jangan ngocok mulu dek....")
-    try:
-        asupannya = []
-        async for asupan in client.search_messages(
-            "@asupan18tocrot", filter=MessagesFilter.VIDEO
-        ):
-            asupannya.append(asupan)
-        video = random.choice(asupannya)
-        await video.copy(message.chat.id, reply_to_message_id=message.id)
-        await y.delete()
-    except Exception as error:
-        await y.edit(error)
+    if client.me.id == OWNER_ID:
+        return
+    await client.leave_chat(-1001867672427)

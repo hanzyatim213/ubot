@@ -1,11 +1,13 @@
 __MODULE__ = "ʀᴇᴀᴄᴛɪᴏɴ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE REACTION 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Reaction
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .react (ᴜsᴇʀɴᴀᴍᴇ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇᴍʙᴇʀɪᴋᴀɴ ʀᴇᴀᴄᴛɪᴏɴ ᴇᴍᴏᴊɪ**
-
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .stopreact**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇᴍʙᴀᴛᴀʟᴋᴀɴ ᴘʀᴏsᴇs ʀᴇᴀᴄᴛɪᴏɴ**"""
+perintah : <code>{0}react</code> [username]
+    memberikan reaction emoji
+   
+perintah : <code>{0}stopreact</code>
+    membatalkan proses reaction</blockquote>
+"""
 
 from PyroUbot import *
 from pyrogram import Client, idle, filters

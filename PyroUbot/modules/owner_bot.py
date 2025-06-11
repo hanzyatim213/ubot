@@ -30,10 +30,10 @@ async def _(client, message):
 
     if user.id in prem_users:
         return await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
 <b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ꜱᴜᴅᴀʜ ᴘʀᴇᴍɪᴜᴍ</ci></b>
-<b>ᴇxᴘɪʀᴇᴅ: {get_bulan} ʙᴜʟᴀɴ
+<b>ᴇxᴘɪʀᴇᴅ: {get_bulan} ʙᴜʟᴀɴ</b></blockquote>
 """
         )
 
@@ -43,16 +43,10 @@ async def _(client, message):
         await set_expired_date(user_id, expired)
         await add_to_vars(bot.me.id, "PREM_USERS", user.id)
         await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
 <b>ᴇxᴘɪʀᴇᴅ: {get_bulan} ʙᴜʟᴀɴ</b>
-<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @{bot.me.username} ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜꜱᴇʀʙᴏᴛ
-
-ᴄᴀʀᴀ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ :
-- sɪʟᴀʜᴋᴀɴ /start ᴅᴜʟᴜ
-- ᴋᴀʟᴀᴜ sᴜᴅᴀʜ sᴛᴀʀᴛ ʙᴏᴛ ᴀʙɪsᴛᴜ ᴘᴇɴᴄᴇᴛ ᴛᴏᴍʙᴏʟ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ 
-- ɴᴀʜ ɴᴀɴᴛɪ ᴀᴅᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ ɪᴛᴜ ɪᴋᴜᴛɪɴ
-ɴᴏᴛᴇ : ᴊᴀɴɢᴀɴ ʟᴜᴘᴀ ʙᴀᴄᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ
+<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @{bot.me.username} ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜꜱᴇʀʙᴏᴛ</b></blockquote>
 """
         )
         return await bot.send_message(
@@ -94,18 +88,18 @@ async def _(client, message):
 
     if user.id not in prem_users:
         return await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
-<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛɪᴅᴀᴋ ᴛᴇʀᴅᴀꜰᴛᴀʀ</ci>
+<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛɪᴅᴀᴋ ᴛᴇʀᴅᴀꜰᴛᴀʀ</ci></b></blockquote>
 """
         )
     try:
         await remove_from_vars(bot.me.id, "PREM_USERS", user.id)
         await rem_expired_date(user_id)
         return await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
-<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛᴇʟᴀʜ ᴅɪ ʜᴀᴘᴜꜱ ᴅᴀʀɪ ᴅᴀᴛᴀʙᴀꜱᴇ</ci>
+<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛᴇʟᴀʜ ᴅɪ ʜᴀᴘᴜꜱ ᴅᴀʀɪ ᴅᴀᴛᴀʙᴀꜱᴇ</ci></b></blockquote>
 """
         )
     except Exception as error:
@@ -130,7 +124,7 @@ async def _(client, message):
             userlist = f"• {count}: <a href=tg://user?id={user.id}>{user.first_name} {user.last_name or ''}</a> > <code>{user.id}</code>"
         except Exception:
             continue
-        text += f"<b>{userlist}\n</blockquote></b>"
+        text += f"<blockquote><b>{userlist}\n</blockquote></b>"
     if not text:
         await message.reply_text("ᴛɪᴅᴀᴋ ᴀᴅᴀ ᴘᴇɴɢɢᴜɴᴀ ʏᴀɴɢ ᴅɪᴛᴇᴍᴜᴋᴀɴ")
     else:
@@ -158,19 +152,19 @@ async def _(client, message):
 
     if user.id in sudo_users:
         return await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
-<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ꜱᴜᴅᴀʜ ʀᴇꜱᴇʟʟᴇʀ</ci>
+<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ꜱᴜᴅᴀʜ ʀᴇꜱᴇʟʟᴇʀ</ci></b></blockquote>
 """
         )
 
     try:
         await add_to_vars(bot.me.id, "SELER_USERS", user.id)
         return await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
 <b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ʀᴇꜱᴇʟʟᴇʀ</ci></b>
-<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @{bot.me.username}
+<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @{bot.me.username}</b></blockquote>
 """
         )
     except Exception as error:
@@ -198,18 +192,18 @@ async def _(client, message):
 
     if user.id not in seles_users:
         return await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
-<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛɪᴅᴀᴋ ᴛᴇʀᴅᴀꜰᴛᴀʀ</ci>
+<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛɪᴅᴀᴋ ᴛᴇʀᴅᴀꜰᴛᴀʀ</ci></b></blockquote>
 """
         )
 
     try:
         await remove_from_vars(bot.me.id, "SELER_USERS", user.id)
         return await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: `{user.id}`</b>
-<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛᴇʟᴀʜ ᴅɪ ʜᴀᴘᴜꜱ ᴅᴀʀɪ ᴅᴀᴛᴀʙᴀꜱᴇ</ci>
+<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ᴛᴇʟᴀʜ ᴅɪ ʜᴀᴘᴜꜱ ᴅᴀʀɪ ᴅᴀᴛᴀʙᴀꜱᴇ</ci></b></blockquote>
 """
         )
     except Exception as error:
@@ -232,7 +226,7 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             seles_list.append(
-                f"👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
+                f"<blockquote>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | `{user.id}`</blockquote>"
             )
         except:
             continue
@@ -274,7 +268,7 @@ async def _(client, message):
 💬 INFORMATION
  name: {user.mention}
  id: {get_id}
- aktifkan_selama: {get_day} hari</blockquote>
+ aktifkan_selama: {get_day} hari
 """
     )
 
@@ -295,11 +289,11 @@ async def _(client, message):
         return await Sh.ediit(error)
     if get_exp is None:
         await Sh.edit(f"""
-<b>ɴᴀᴍᴇ: {sh.mention}</b>
+<blockquote><b>ɴᴀᴍᴇ: {sh.mention}</b>
 <b>ɪᴅ: `{user_id}`</b>
 <b>ᴘʟᴀɴ : ɴᴏɴᴇ</b>
 <b>ᴘʀᴇꜰɪx : .</b>
-<b>ᴇxᴘɪʀᴇᴅ : ɴᴏɴᴀᴋᴛɪꜰ
+<b>ᴇxᴘɪʀᴇᴅ : ɴᴏɴᴀᴋᴛɪꜰ</b></blockquote>
 """)
     else:
         SH = await ubot.get_prefix(user_id)
@@ -309,16 +303,16 @@ async def _(client, message):
         else:
             status = "Premium"
         await Sh.edit(f"""
-<b>ɴᴀᴍᴇ: {sh.mention}</b>
+<blockquote><b>ɴᴀᴍᴇ: {sh.mention}</b>
 <b>ɪᴅ: `{user_id}`</b>
 <b>ᴘʟᴀɴ : {status}</b>
 <b>ᴘʀᴇꜰɪx : {' '.join(SH)}</b>
-<b>ᴇxᴘɪʀᴇᴅ : {exp}
+<b>ᴇxᴘɪʀᴇᴅ : {exp}</b></blockquote>
 """
         )
 
 
-@PY.UBOT("admin")
+@PY.UBOT("addadmin")
 async def _(client, message):
     user = message.from_user
     if user.id != OWNER_ID:
@@ -342,7 +336,7 @@ async def _(client, message):
 💬 INFORMATION
 name: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})
 id: {user.id}
-keterangan: sudah dalam daftar</blockquote>
+keterangan: sudah dalam daftar
 """
         )
 
@@ -352,7 +346,7 @@ keterangan: sudah dalam daftar</blockquote>
 💬 INFORMATION
 name: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})
 id: {user.id}
-keterangan: admin</blockquote>
+keterangan: admin
 """
         )
     except Exception as error:

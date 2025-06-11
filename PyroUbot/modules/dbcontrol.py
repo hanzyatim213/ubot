@@ -7,20 +7,24 @@ from pytz import timezone
 
 from PyroUbot import *
 
-__MODULE__ = "ᴅʙᴄᴏɴᴛʀᴏʟ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE DBCONTROL 」**
+__MODULE__ = "ᴅʙ ᴄᴏɴᴛʀᴏʟ"
+__HELP__ = """
+<blockquote><b>Bantuan Untuk DB Control</blockquote></b>
 
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .time**
-𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇɴᴀᴍʙᴀʜ - ᴍᴇɴɢᴜʀᴀɴɢɪ ᴍᴀsᴀ ᴀᴋᴛɪғ ᴜsᴇʀ**
-    
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .cek**
-𖠇➛ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ᴍᴀsᴀ ᴀᴋᴛɪғ ᴜsᴇʀ**
-    
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .addadmin - .unadmin - .getadmin**
-𖠇➛ **ᴘᴇʀɪɴᴛᴀʜ: .seles - .unseles - .getseles**"""
+<blockquote><b>perintah : <code>{0}time</code>
+    Untuk Menambah - Mengurangi Masa Aktif User</blockquote></b>
+
+<blockquote><b>perintah : <code>{0}cek</code>
+    Untuk Melihat Masa Aktif User</blockquote></b>
+
+<blockquote><b>perintah : <code>{0}addadmin</code> - <code>{0}unadmin</code> - <code>{0}getadmin</code></blockquote></b>
+
+<blockquote><b>perintah : <code>{0}seles</code> - <code>{0}unseles</code> - <code>{0}getseles</code></blockquote></b>
+"""
 
 @PY.BOT("prem")
 @PY.SELLER
+@PY.ADMIN
 async def _(client, message):
     user_id, get_bulan = await extract_user_and_reason(message)
     msg = await message.reply("memproses...")
@@ -51,16 +55,10 @@ async def _(client, message):
         await set_expired_date(user_id, expired)
         await add_to_vars(client.me.id, "PREM_USERS", user.id)
         await msg.edit(f"""
-<b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
 <b>ɪᴅ: {user.id}</b>
 <b>ᴇxᴘɪʀᴇᴅ: {get_bulan} ʙᴜʟᴀɴ</b>
-<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @THREEBOTPREMIUMxbot ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜꜱᴇʀʙᴏᴛ
-
-ᴄᴀʀᴀ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ :
-- sɪʟᴀʜᴋᴀɴ /start ᴅᴜʟᴜ ʙᴏᴛ @THREEBOTPREMIUMxbot
-- ᴋᴀʟᴀᴜ sᴜᴅᴀʜ sᴛᴀʀᴛ ʙᴏᴛ ᴀʙɪsᴛᴜ ᴘᴇɴᴄᴇᴛ ᴛᴏᴍʙᴏʟ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ 
-- ɴᴀʜ ɴᴀɴᴛɪ ᴀᴅᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ ɪᴛᴜ ɪᴋᴜᴛɪɴ</blockquote>
-<blockquote><b>ɴᴏᴛᴇ : ᴊᴀɴɢᴀɴ ʟᴜᴘᴀ ʙᴀᴄᴀ ᴀʀᴀʜᴀɴ ᴅᴀʀɪ ʙᴏᴛ ɴʏᴀ
+<b>ꜱɪʟᴀʜᴋᴀɴ ʙᴜᴋᴀ @{client.me.username} ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜꜱᴇʀʙᴏᴛ</b></blockquote>
 """
         )
         return await bot.send_message(
@@ -135,7 +133,7 @@ async def _(client, message):
         try:
             user = await bot.get_users(user_id)
             count += 1
-            userlist = f"• {count}: <a href=tg://user?id={user.id}>{user.first_name} {user.last_name or ''}</a> > <code>{user.id}"
+            userlist = f"• {count}: <a href=tg://user?id={user.id}>{user.first_name} {user.last_name or ''}</a> > <code>{user.id}</code>"
         except Exception:
             continue
         text += f"<blockquote><b>{userlist}\n</blockquote></b>"
@@ -237,7 +235,7 @@ async def _(client, message):
         try:
             user = await client.get_users(int(user_id))
             seles_list.append(
-                f"<blockquote><b>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</blockquote></b>"
+                f"<blockquote><b>👤 [{user.first_name} {user.last_name or ''}](tg://user?id={user.id}) | <code>{user.id}</code></blockquote></b>"
             )
         except:
             continue
@@ -449,8 +447,8 @@ async def _(client, message):
         return await msg.edit(f"""
 <b>name:</b> [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})
 <b>id:</b> {user.id}
-<b>keterangan: sudah</b> <code>[SuperUltra]
-<b>expired:</b> <code>{get_bulan} <b>bulan</b>
+<b>keterangan: sudah</b> <code>[SuperUltra]</code>
+<b>expired:</b> <code>{get_bulan}</code> <b>bulan</b>
 """
         )
 
@@ -461,10 +459,10 @@ async def _(client, message):
         await add_to_vars(client.me.id, "ULTRA_PREM", user.id)
         await msg.edit(f"""
 <b>name:</b> [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})
-<b>id:</b> <code>{user.id}
-<b>expired:</b> <code>{get_bulan} <b>bulan</b>
+<b>id:</b> <code>{user.id}</code>
+<b>expired:</b> <code>{get_bulan}</code> <b>bulan</b>
 <b>ꜱilahkan buka</b> @{client.me.mention} <b>untuk membuat uꜱerbot</b>
-<b>status : </b><code>[SuperUltra]
+<b>status : </b><code>[SuperUltra]</code>
 """
         )
         return await bot.send_message(
@@ -507,7 +505,7 @@ async def _(client, message):
     if user.id not in prem_users:
         return await msg.edit(f"""
 <b>name:</b> [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})
-<b>id:</b> <code>{user.id}
+<b>id:</b> <code>{user.id}</code>
 <b>keterangan: tidak dalam daftar</b>
 """
         )
@@ -515,9 +513,9 @@ async def _(client, message):
         await remove_from_vars(client.me.id, "ULTRA_PREM", user.id)
         await rem_expired_date(user_id)
         return await msg.edit(f"""
-<b>name: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})
-<b>id: {user.id}
-<b>keterangan: none superultra
+<b>name:</b> [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})
+<b>id:</b> <code>{user.id}</code>
+<b>keterangan: none superultra</b>
 """
         )
     except Exception as error:

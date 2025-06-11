@@ -7,34 +7,38 @@ from pyrogram.types import *
 from io import BytesIO
 
 __MODULE__ = "ᴡᴀʟʟᴘᴀᴘᴇʀ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE WALLPAPER 」**
+__HELP__ = """
+<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴡᴀʟʟᴘᴀᴘᴇʀ ⦫</b>
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .wall (ᴏ̨ᴜᴇʀʏ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇɴᴄᴀʀɪ ᴡᴀʟʟᴘᴀᴘᴇʀ/ɢᴀᴍʙᴀʀ**
+<blockquote><b>⎆ perintah :
+ᚗ <code>{0}wall</code> [Query]
+⊷ ᴜɴᴛᴜᴋ ᴍᴇɴᴄᴀʀɪ ᴡᴀʟʟᴘᴀᴘᴇʀ/ɢᴀᴍʙᴀʀ
 
-〄➠ **ᴏ̨ᴜᴇʀʏ:**
-    ⋄ ᴛᴇᴋɴᴏʟᴏɢɪ,
-    ⋄ ᴀᴇsᴛʜᴇᴛɪᴄ,
-    ⋄ ᴋᴀᴛᴀᴋᴀᴛᴀ,
-    ⋄ ʜᴇᴋᴇʀ,
-    ⋄ ᴀɴᴊɪɴɢ,
-    ⋄ ʜᴘ,
-    ⋄ ɢᴀᴍᴇʀ,
-    ⋄ ᴘʀᴏɢᴀᴍɪɴɢ,
-    ⋄ ᴄʜᴜᴋʏ,
-    ⋄ ᴋᴜᴄɪɴɢ"""
+ᚗ Query
+   ⊷ ᴛᴇᴋɴᴏʟᴏɢɪ
+   ⊷ ᴀᴇsᴛʜᴇᴛɪᴄ
+   ⊷ ᴋᴀᴛᴀᴋᴀᴛᴀ   
+   ⊷ ʜᴇᴋᴇʀ   
+   ⊷ ᴛᴇᴋɴᴏʟᴏɢɪ
+   ⊷ ᴀɴᴊɪɴɢ     
+   ⊷ ʜᴘ 
+   ⊷ ɢᴀᴍᴇʀ 
+   ⊷ ᴘʀᴏɢᴀᴍɪɴɢ  
+   ⊷ ᴄʜᴜᴋʏ 
+   ⊷ ᴋᴜᴄɪɴɢ  
+"""
 
 URLS = {
-    "teknologi": "https://api.botcahx.eu.org/api/wallpaper/teknologi?apikey=VENOZY",
-    "aesthetic": "https://api.botcahx.eu.org/api/wallpaper/aesthetic?apikey=VENOZY",
-    "katakata": "https://api.botcahx.eu.org/api/wallpaper/katakata?apikey=VENOZY",
-    "heker": "https://api.botcahx.eu.org/api/wallpaper/hacker?apikey=VENOZY",
-    "anjing": "https://api.botcahx.eu.org/api/wallpaper/anjing?apikey=VENOZY",
-    "hp": "https://api.botcahx.eu.org/api/wallpaper/wallhp?apikey=VENOZY",
-    "gamer": "https://api.botcahx.eu.org/api/wallpaper/gaming?apikey=VENOZY",
-    "progaming": "https://api.botcahx.eu.org/api/wallpaper/programing?apikey=VENOZY",
-    "chuky": "https://api.botcahx.eu.org/api/wallpaper/boneka-chucky?apikey=VENOZY",
-    "kucing": "https://api.botcahx.eu.org/api/wallpaper/kucing?apikey=VENOZY",
+    "teknologi": "https://api.botcahx.eu.org/api/wallpaper/teknologi?apikey=moire",
+    "aesthetic": "https://api.botcahx.eu.org/api/wallpaper/aesthetic?apikey=moire",
+    "katakata": "https://api.botcahx.eu.org/api/wallpaper/katakata?apikey=moire",
+    "heker": "https://api.botcahx.eu.org/api/wallpaper/hacker?apikey=moire",
+    "anjing": "https://api.botcahx.eu.org/api/wallpaper/anjing?apikey=moire",
+    "hp": "https://api.botcahx.eu.org/api/wallpaper/wallhp?apikey=moire",
+    "gamer": "https://api.botcahx.eu.org/api/wallpaper/gaming?apikey=moire",
+    "progaming": "https://api.botcahx.eu.org/api/wallpaper/programing?apikey=moire",
+    "chuky": "https://api.botcahx.eu.org/api/wallpaper/boneka-chucky?apikey=moire",
+    "kucing": "https://api.botcahx.eu.org/api/wallpaper/kucing?apikey=moire",
     }
 
 

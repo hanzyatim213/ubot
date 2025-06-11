@@ -3,19 +3,24 @@ from PyroUbot import *
 import requests
 
 __MODULE__ = "ʙʀᴀᴛ"
-__HELP__ =  """🛠 **BANTUAN UNTUK MODULE BRAT TREND 」**
+__HELP__ =  """
+<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙʀᴀᴛ ⦫ </b>
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .brat (ᴛᴇxᴛ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: untuk membuat text seperti tren tete**
+<blockquote><b>⎆ ᴘᴇʀɪɴᴛᴀʜ:
+ᚗ <code>{0}brat [text]</code>
+⊷ Untuk Membuat Gambar Text Seperti Tren Tiktok</b></blockquote>
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .ʙʀᴀᴛᴠɪᴅᴇᴏ (ᴛᴇxᴛ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: untuk membuat text video seperti tren tete**"""
+<blockquote><b>⎆ ᴘᴇʀɪɴᴛᴀʜ:
+ᚗ <code>{0}bratvideo [text]</code>
+⊷ Untuk Membuat Gambar Text video Seperti Tren Tiktok</b></blockquote>
+
+"""
 
 def get_brat_image(text):
     url = "https://api.botcahx.eu.org/api/maker/brat"
     params = {
         "text": text,
-        "apikey": "VENOZY"
+        "apikey": "moire"
     }
     try:
         response = requests.get(url, params=params)
@@ -32,11 +37,11 @@ def get_brat_image(text):
 async def _(client, message):
     args = message.text.split(" ", 1)
     if len(args) < 2:
-        await message.reply_text("gunakan perintah .brat <teks> untuk membuat gambar.")
+        await message.reply_text("⎆ Gunakan perintah .brat <teks> untuk membuat gambar.")
         return
 
     request_text = args[1]
-    await message.reply_text("sedang memproses, mohon tunggu...")
+    await message.reply_text("⎆ Sedang memproses, mohon tunggu...")
 
     image_content = get_brat_image(request_text)
     if image_content:
@@ -67,7 +72,7 @@ def get_brat_video(text):
     except requests.exceptions.RequestException:
         return None
         
-@PY.UBOT("bratvideo")
+@PY.UBOT("bratvideox")
 async def _(client, message):
     args = message.text.split(" ", 1)
     if len(args) < 2:

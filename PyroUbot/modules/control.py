@@ -1,30 +1,32 @@
 from PyroUbot import *
 
 __MODULE__ = "ᴄᴏɴᴛʀᴏʟ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE CONTROL 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Control
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .prefix**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ᴘʀᴇғɪx/ʜᴀɴᴅʟᴇʀ ᴘᴇʀɪɴᴛᴀʜ**
+perintah : <code>{0}prefix</code>
+   untuk merubah prefix/handler perintah
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .creat**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ɢʀᴏᴜᴘ ᴀᴛᴀᴜ ᴄʜᴀɴɴᴇʟ**
+perintah : <code>{0}creat</code>
+   untuk membuat group atau channel
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .emoji (ǫᴜᴇʀʏ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ᴇᴍᴏᴊɪ ᴘᴀᴅᴀ ᴛᴀᴍᴘɪʟᴀɴ ᴛᴇʀᴛᴇɴᴛᴜ**
+perintah : <code>{0}emoji</code> query emojiprem
+   untuk merubah emoji pada tampilan tertentu
 
-〄➠ **ǫᴜᴇʀʏ:**
-  ⋄ ᴘᴏɴɢ
-  ⋄ ᴏᴡɴᴇʀ
-  ⋄ ᴜʙᴏᴛ
-  ⋄ ɢᴄᴀsᴛ
-  ⋄ sᴜᴋsᴇs
-  ⋄ ɢᴀɢᴀʟ
-  ⋄ ᴘʀᴏsᴇs
-  ⋄ ɢʀᴏᴜᴘ
-  ⋄ ᴄᴀᴛᴀᴛᴀɴ
-  ⋄ ᴀғᴋ
-  ⋄ ᴡᴀᴋᴛᴜ
-  ⋄ ᴀʟᴀsᴀɴ"""
+query:
+    ><code>{0}pong</code>
+    ><code>{0}owner</code>
+    ><code>{0}ubot</code>
+    ><code>{0}gcast</code>
+    ><code>{0}sukses</code>
+    ><code>{0}gagal</code>
+    ><code>{0}proses</code>
+    ><code>{0}group</code>
+    ><code>{0}catatan</code>
+    ><code>{0}afk</code>
+    ><code>{0}waktu</code>
+    ><code>{0}alasan</code></blockquote>
+"""
 
 
 @PY.UBOT("creat")
@@ -66,7 +68,7 @@ async def _(client, message):
     else:
         ub_prefix = []
         for prefix in message.command[1:]:
-            if prefix.lower() == "none":
+            if prefix.lower() == "threnone":
                 ub_prefix.append("")
             else:
                 ub_prefix.append(prefix)
@@ -74,7 +76,7 @@ async def _(client, message):
             client.set_prefix(message.from_user.id, ub_prefix)
             await set_pref(message.from_user.id, ub_prefix)
             parsed_prefix = " ".join(f"{prefix}" for prefix in ub_prefix)
-            return await Tm.edit(f"<blockquote><b>{brhsl}prefix telah diubah ke: {parsed_prefix}</blockquote></b>\n\n<blockquote><b>ᴀᴡᴀs ᴋᴀʟᴏ ʙᴜᴀᴛ ᴘʀᴇғɪx ᴊᴀɴɢᴀɴ sᴀᴍᴘᴇ ʟᴜᴘᴀ ᴘʀᴇғɪx ʏᴀɴɢ ʟᴜ ɢᴀɴᴛɪ ᴀᴘᴀ !!</blockquote></b>")
+            return await Tm.edit(f"{brhsl}  Prefix diatur ke : {parsed_prefix}")
         except Exception as error:
             return await Tm.edit(str(error))
 
@@ -108,12 +110,10 @@ async def _(client, message):
         afk_runtime = await get_time(time() - afk_time)
         rpk = f"[{message.from_user.first_name} {message.from_user.last_name or ''}](tg://user?id={message.from_user.id})"
         afk_text = (
-            f"<blockquote><b>{tion}sedang afk\n{mng}waktu: {afk_runtime}\n{ktrng}alasan: {afk_reason}</blockquote></b>"
+            f"<b>{brhsl} AFK MODE\nReason: {afk_reason}</b>"
             if afk_reason
             else f"""
-<blockquote><b>hello {rpk}
-tuan saya sedang afk selama : {afk_runtime}
-mohon tunggu beberapa waktu</blockquote></b>
+<b>Currently AFK!!</b>
 """
         )
         return await message.reply(afk_text)
@@ -129,7 +129,7 @@ async def _(client, message):
     if vars:
         afk_time = vars.get("time")
         afk_runtime = await get_time(time() - afk_time)
-        afk_text = f"<blockquote><b>{tion}kembali online\n{mng}afk selama: {afk_runtime}</blockquote></b>"
+        afk_text = f"<b>{brhsl} Back to Online!!</b>"
         await message.reply(afk_text)
         return await remove_vars(client.me.id, "AFK")
 
@@ -189,4 +189,3 @@ async def _(client, message):
 
     except Exception as error:
         await msg.edit(str(error))
-

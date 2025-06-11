@@ -1,20 +1,22 @@
 from PyroUbot import *
 from pyrogram.enums import ParseMode
 __MODULE__ = "ᴄᴜꜱᴛᴏᴍ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE CUSTOM 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Custom
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .lihatemoji**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ᴇᴍᴏᴊɪ**
+perintah : <code>{0}lihatemoji</code>
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .text**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇʀᴜʙᴀʜ ᴛᴇxᴛ ᴘᴀᴅᴀ ᴛᴀᴍᴘɪʟᴀɴ ᴛᴇʀᴛᴇɴᴛᴜ**
+perintah : <code>{0}text</code>
+   untuk merubah text pada tampilan tertentu
 
-〄➠ **ᴏ̨ᴜᴇʀʏ:**
-  ⋄ .ᴘᴏɴɢ  | ᴅᴇғᴀᴜʟᴛ : ± ᴘᴏɴɢ
-  ⋄ .ᴏᴡɴᴇʀ | ᴅᴇғᴀᴜʟᴛ : ± ᴏᴡɴᴇʀ
-  ⋄ .ᴜʙᴏᴛ  | ᴅᴇғᴀᴜʟᴛ : ± ᴜʙᴏᴛ
-〄➠ **ᴇxᴀᴍᴘʟᴇ:**
-  ⋄ **.ᴛᴇxᴛ ᴘᴏɴɢ ɴᴏɴᴇ | ᴜɴᴛᴜᴋ ᴍᴇɴʏᴇᴛɪɴɢ ᴋᴇ ᴅᴇғᴀᴜʟᴛ**"""
+query:
+  <code>{0}pong<code> | default : ± pong
+  <code>{0}owner<code> | default : ± owner
+  <code>{0}ubot<code> | default : ± ubot
+
+contoh :
+     <code>{0}</code>text pong none | untuk menyeting ke default</blockquote>
+"""
 def extract_emojis_from_entities(message):
     emojis = []
     for entity in message.entities:

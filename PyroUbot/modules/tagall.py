@@ -8,13 +8,15 @@ from PyroUbot import *
 
 
 __MODULE__ = "ᴛᴀɢᴀʟʟ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE TAGALL 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Tagall
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .tagall**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇʟᴀᴋᴜᴋᴀɴ ᴛᴀɢ ᴋᴇ sᴇʟᴜʀᴜʜ ᴀɴɢɢᴏᴛᴀ ɢʀᴏᴜᴘ**
+perintah : <code>{0}tagall</code>
+    melakukan tag ke seluruh anggota group
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .batal**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇᴍʙᴀᴛᴀʟᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ᴛᴀɢᴀʟʟ**"""
+perintah : <code>{0}batal</code>
+    membatalkan perintah tagall</blockquote>
+"""
 
 
 
@@ -193,7 +195,7 @@ async def _(client, message):
 async def _(client, message):
     if message.chat.id not in tagallgcid:
         return await message.reply_text(
-            "tidak ada <blockquote>🚦perintah tagall yang digunakan"
+            "tidak ada perintah : tagall yang digunakan"
         )
     try:
         tagallgcid.remove(message.chat.id)

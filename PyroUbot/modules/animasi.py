@@ -28,28 +28,32 @@ NOBLE = [
     "┊┊╭╮┊┊┊┊┊┊┊┊┊┊┊ \n╋╯┊┊┊┊┊┊┊┊┊┊┊ \n┊┊┃┊╭┳╮╭┓┊╭╮╭╮ \n╭╋╋╯┣╯┃┊┃╰╋╯ \n╰╯┊╰╯┊╰┛┊╰",
 ]
 
-__MODULE__ = "ᴀɴɪᴍᴀꜱɪ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE ANIMASI 」**
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .dino**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .awk**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .loveyou**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .ange**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: hmm ᴏʀ lipkol**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .ʜᴍᴍ/ʟɪᴘᴋᴏʟ**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .kntl**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .ajg**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .kocok**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .heli**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .ok**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .ɴᴀᴋᴀʟ**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .spongebob**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .nah**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .tank**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .tembak**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .piss**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .bot**
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .bundir**"""
+__MODULE__ = "ᴀɴɪᴍᴀꜱɪ"
+__HELP__ = """
+<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀɴɪᴍᴀsɪ ⦫<b>
+
+<blockquote><b>⎆ perintah :
+ᚗ <code>{0}dino</code>
+ᚗ <code>{0}awk</code>
+ᚗ <code>{0}loveyou</code>
+ᚗ <code>{0}ange</code>
+ᚗ <code>{0}hmm</code>
+ᚗ <code>{0}lipkol</code>
+ᚗ <code>{0}kntl</code>
+ᚗ <code>{0}ajg</code>
+ᚗ <code>{0}kocok</code>
+ᚗ <code>{0}heli</code>
+ᚗ <code>{0}y</code>
+ᚗ <code>{0}nakal</code>
+ᚗ <code>{0}tank</code>
+ᚗ <code>{0}nah</code>
+ᚗ <code>{0}tembak</code>
+ᚗ <code>{0}piss</code>
+ᚗ <code>{0}bundir</code>
+ᚗ <code<{0}bot</code>
+ᚗ <code>{0}sepongebob</code></b></blockquote>
+"""
 
 
 @PY.UBOT("loveyou")
@@ -170,7 +174,7 @@ async def ysaja(client, message):
         "▓▓▓▓▓▓█████‡‡‡‡‡‡‡‡‡‡‡‡██\n"
         "█████‡‡‡‡‡‡‡██████████\n",
     )
-@PY.UBOT("ubot")
+@PY.UBOT("bot")
 @PY.TOP_CMD
 async def bot(client, message):
     await message.reply(
@@ -265,6 +269,9 @@ async def spongebobss(client: Client, message: Message):
         "╲┃╭┃╰┏┳┳┳┳┓◯┃╲╲\n"
         "╲┃╰┃◯╰┗┛┗┛╯╭┃╲╲\n",
     )
+
+
+
 @PY.UBOT("kocok")
 @PY.TOP_CMD
 async def kocokk(client, message):
@@ -412,3 +419,7 @@ async def nahlove(client, message):
     typew = await message.reply("`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *Ini Buat Kamu`")
     await asyncio.sleep(2)
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💖<\\  *Tapi Bo'ong`")
+
+
+
+

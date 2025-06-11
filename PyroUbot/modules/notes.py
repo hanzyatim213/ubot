@@ -3,34 +3,38 @@ from pyrogram.types import *
 from PyroUbot import *
 
 __MODULE__ = "ɴᴏᴛᴇ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE NOTE 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Notes
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .addnote (ɴᴀᴍᴀ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: menyimpan sebuah catatan**
+perintah : <code>{0}addnote</code> [name]
+    menyimpan sebuah catatan
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .addcb (ɴᴀᴍᴀ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: menyimpan sebuah callback**
+perintah : <code>{0}addcb</code> [name]
+    menyimpan sebuah callback
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .get (ɴᴀᴍᴀ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: mendapatkan catatan yang di simpan**
+perintah : <code>{0}get</code> [name]
+    mendapatkan catatan yang di simpan
+ 
+perintah : <code>{0}delnote</code> [name]
+    menghapus catatan yang di simpan
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .delnote (ɴᴀᴍᴀ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: menghapus catatan yang di simpan**
+perintah : <code>{0}delcb</code> [name]
+    menghapus callback yang di simpan
+ 
+perintah : <code>{0}listnote</code>
+   melihat daftar catatan yang di simpan
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .delcb (ɴᴀᴍᴀ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: menghapus callback yang di simpan**
+perintah : <code>{0}listcb</code>
+   melihat daftar callback yang di simpan
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .listnote**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: melihat daftar catatan yang di simpan**
+for button:
+    format | nama tombol - url/callback |
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .listcb**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: melihat daftar callback yang di simpan**
+payment | dana - dana | | bank - bank # | 
+catatan : untuk membuat button menyamping adalah #
 
-〄➠ **ᴇxᴀᴍᴘʟᴇ:**
- ⋄-{ ғᴏʀᴍᴀᴛ | ɴᴀᴍᴀ ᴛᴏᴍʙᴏʟ - ᴜʀʟ/ᴄᴀʟʟʙᴀᴄᴋ |
- ⋄-{ ᴘᴀʏᴍᴇɴᴛ | ᴅᴀɴᴀ - ᴅᴀɴᴀ | | ʙᴀɴᴋ - ʙᴀɴᴋ # | 
- ⋄-{ ɴᴏᴛᴇ : ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ʙᴜᴛᴛᴏɴ ᴍᴇɴʏᴀᴍᴘɪɴɢ ᴀᴅᴀʟᴀʜ #
- ⋄-{ ᴛᴜᴛᴏʀɪᴀʟ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴄᴀʟʟʙᴀᴄᴋ/ᴛᴏᴍʙᴏʟ : <a href='https://t.me/testitinn1/79'>ᴘᴇɴᴄᴇᴛ ᴅɪ sɪɴɪ</a>**"""
+contoh menggunakan callback/tombol : <a href='https://t.me/userbot/79'>tutorial</a></blockquote>
+"""
 
 
 @PY.UBOT("addnote|addcb")

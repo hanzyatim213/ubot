@@ -3,7 +3,7 @@
 apt update && apt upgrade -y && add-apt-repository 'ppa:deadsnakes/ppa'
 ```
 ```
-git clone https://github.com/hanzyatim213/ubot.git
+git clone https://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@github.com/NATZTTT/ubotlite
 ```
 ```
 cd ubotlite && screen -S ubotlite

@@ -9,28 +9,30 @@ from PyroUbot import *
 
 
 __MODULE__ = "ᴛʀᴀɴꜱʟᴀᴛᴇ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE TRANSLATE BAHASA 」**
+__HELP__ = """
+<blockquote>Bantuan Untuk Translate
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .tr**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴᴇʀᴊᴇᴍᴀʜᴋᴀɴ ᴘᴇsᴀɴ/ᴛᴇxᴛ.**
+perintah : <code>{0}tr</code>
+    menerjemahkan pesan/text
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .tts (ʙᴀʟᴀs/ᴛᴇxᴛ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇʀᴜʙᴀʜ ᴛᴇxᴛ ᴍᴇɴᴊᴀᴅɪ ᴘᴇsᴀɴ sᴜᴀʀᴀ sᴇsᴜɪ ʙᴀʜᴀsᴀ**
+perintah : <code>{0}tts</code>
+     merubah text menjadi pesan suara sesui bahasa
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .setlang**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇʀᴜʙᴀʜ ʙᴀʜᴀsᴀ ᴛʀᴀɴsʟᴀᴛᴇ**"""
+perintah : <code>{0}setlang</code>
+    merubah bahasa translate</blockquote>
+"""
 
 
 @PY.UBOT("tts")
 @PY.TOP_CMD
 async def _(client, message):
-    TM = await message.reply("silahkan tunggu")
+    TM = await message.reply("<blockquote><b>silahkan tunggu</b></blockquote>")
     if message.reply_to_message:
         language = client._translate[client.me.id]
         words_to_say = message.reply_to_message.text or message.reply_to_message.caption
     else:
         if len(message.command) < 2:
-            return await TM.edit(f"{message.text} (ʙᴀʟᴀs/ᴛᴇxᴛ)")
+            return await TM.edit(f"<blockquote><b>{message.text} [reply/text]</b></blockquote>")
         else:
             language = client._translate[client.me.id]
             words_to_say = message.text.split(None, 1)[1]
@@ -56,14 +58,14 @@ async def _(client, message):
 @PY.TOP_CMD
 async def _(client, message):
     trans = Translator()
-    TM = await message.reply("silahkan tunggu")
+    TM = await message.reply("<blockquote><b>silahkan tunggu</b></blockquote>")
     if message.reply_to_message:
         dest = client._translate[client.me.id]
         to_translate = message.reply_to_message.text or message.reply_to_message.caption
         source = await trans.detect(to_translate)
     else:
         if len(message.command) < 2:
-            return await message.reply(f"{message.text} (ʙᴀʟᴀs/ᴛᴇxᴛ)")
+            return await message.reply(f"<blockquote><b>{message.text} [reply/text]</b></blockquote>")
         else:
             dest = client._translate[client.me.id]
             to_translate = message.text.split(None, 1)[1]
@@ -122,7 +124,7 @@ async def _(client, callback_query):
         m = [obj for obj in get_objects() if id(obj) == int(data[1])][0]
         m._client._translate[m._client.me.id] = lang_code_translate[data[2]]
         return await callback_query.edit_message_text(
-            f"berhasil diubah ke bahasa: {Fonts.smallcap(data[2].lower())}"
+            f"<blockquote><b>berhasil diubah ke bahasa: {Fonts.smallcap(data[2].lower())}</b></blockquote>"
         )
     except Exception as error:
         return await callback_query.edit_message_text(f"{error}")

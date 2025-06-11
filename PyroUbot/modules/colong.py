@@ -1,5 +1,7 @@
-__MODULE__ = "ᴄᴏʟᴏɴɢ"
-__HELP__ =  """🛠 **BANTUAN UNTUK MODULE COLONG 」**
+__MODULE__ = "colong"
+__HELP__ = """
+<blockquote><b>Bantuan Untuk Colong
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .colong**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴜɴᴛᴜᴋ ᴍᴇɴɢᴀᴍʙɪʟ ғᴏᴛᴏ 1x ʟɪʜᴀᴛ**"""
+perintah : <code>{0}colong</code>
+Untuk Mengambil Media/vidio Yang 1x Lihat</b></blockquote>
+"""

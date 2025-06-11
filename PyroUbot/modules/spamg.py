@@ -7,16 +7,18 @@ from .. import *
 from PyroUbot import *
 
 __MODULE__ = "ꜱᴘᴀᴍ"
-__HELP__ = """🛠 **BANTUAN UNTUK MODULE SPAM PESAN 」**
+__HELP__ = """
+<blockquote><b>『 bantuan spam 』</b>
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .spam (ʙᴀʟᴇs)(ᴊᴜᴍʟᴀʜ sᴘᴀᴍ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇʟᴀᴋᴜᴋᴀɴ sᴘᴀᴍ ᴘᴇsᴀɴ**
+<b>perintah:</b> <code>{0}spam</code>
+   <code>melakukan spam pesan</code>
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .setdelay (ᴊᴜᴍʟᴀʜ ᴅᴇʟᴀʏ)**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇɴɢᴀᴛᴜʀ ᴅᴇʟᴀʏ sᴇᴛɪᴀᴘ ᴘᴇsᴀɴ ʏᴀɴɢ ᴅɪ ᴋɪʀɪᴍ**
+<b>perintah:</b> <code>{0}setdelay</code>
+   <code>mengatur delay setiap pesan yang di kirim</code>
 
-〄➠ **ᴘᴇʀɪɴᴛᴀʜ: .stopspam**
-〄➠ **ᴘᴇɴᴊᴇʟᴀsᴀɴ: ᴍᴇᴍʙᴇʀʜᴇɴᴛɪᴋᴀɴ sᴘᴀᴍ ᴘᴇsᴀɴ ʏᴀɴɢ sᴇᴅᴀɴɢ ʙᴇʀᴊᴀʟᴀɴ**"""
+<b>perintah:</b> <code>{0}stopspam</code>
+   <code>memberhentikan spam pesan yang sedang berjalan</code></blockquote>
+"""
 
 spam_progress = []
 

@@ -133,18 +133,24 @@ class PY:
         return function        
 
     @staticmethod
-    def UBOT(command, filter=None):
-        if filter is None:
-            filter = filters.me
+    def UBOT(command, sudo=True):  # Default sudo=True
+        def wrapper(func):
+            sudo_command = ubot.cmd_prefix(command) if sudo else ubot.cmd_prefix(command) & filters.me
 
-        def decorator(func):
-            @ubot.on_message(ubot.cmd_prefix(command) & filter)
+            @ubot.on_message(sudo_command)
             async def wrapped_func(client, message):
-                return await func(client, message)
+                if sudo:
+                    sudo_id = await get_list_from_vars(client.me.id, "SUDO_USER", "ID_NYA")
+                    if client.me.id not in sudo_id:
+                        sudo_id.append(client.me.id)
+                    if message.from_user.id in sudo_id:
+                        return await func(client, message)
+                else:
+                    return await func(client, message)
 
             return wrapped_func
 
-        return decorator
+        return wrapper
 
 
     @staticmethod
@@ -218,8 +224,8 @@ class PY:
                 user_link = f"<a href=tg://user?id={message.from_user.id}>{message.from_user.first_name} {message.from_user.last_name or ''}</a>"
                 formatted_text = f"{user_link}\n\n{message.text}"
                 buttons = [
-                    [InlineKeyboardButton("ᴅᴀᴘᴀᴛᴋᴀɴ ᴘʀᴏғɪʟ", callback_data=f"profil {message.from_user.id}"),
-                    InlineKeyboardButton("ᴊᴀᴡᴀʙ ᴘᴇsᴀɴ", callback_data=f"jawab_pesan {message.from_user.id}")],
+                    [InlineKeyboardButton("👤 Akun", callback_data=f"profil {message.from_user.id}"),
+                    InlineKeyboardButton("💬 Kirim Pesan", callback_data=f"jawab_pesan {message.from_user.id}")],
                 ]
                 await bot.send_message(
                     OWNER_ID,
