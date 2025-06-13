@@ -1,0 +1,1 @@
+# ga di bayar mknya gw hapus
